@@ -87,7 +87,9 @@ const list = async (req,res)=>{
 	try{
 
 		let userMail = req.user.email;
-		let users = await User.findAll();
+		let users = await User.findAll({
+			attributes:['id','name','email']
+		});
 
 		let updatedUses = users.filter(user=>{
 			if(user.email != userMail)
@@ -116,6 +118,7 @@ const searchUser = async(req,res)=>{
 		let name = req.body.name;
 
 		let users = await User.findAll({
+			attributes:['name','email'],
 			where:{
 				name:{
 					[Op.startsWith]:name
