@@ -1,6 +1,6 @@
 const Request = require('../models').Request;
 const Friend = require('../models').Friend;
-
+const User = require('../models').User;
 
 const friendRequest = async (req,res)=>{
 	try{
@@ -148,6 +148,7 @@ const mutualFriends = async (req,res)=>{
 		// console.log(userFriends);
 		// console.log(visitingFriends);
 
+		
 		let mutual = userFriends.filter(friend=>{
 			for(fr of visitingFriends){
 				if(fr.dataValues.friendId == friend.dataValues.friendId)
