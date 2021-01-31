@@ -12,8 +12,7 @@ This demo provides a REST API to create and login as a user, fetch all the regis
 
 # API EndPoints
 
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
+
   - ### Create new User
   - POST URL : http://localhost:5000/api/user/register
   - body : { name,email,password,dob }
